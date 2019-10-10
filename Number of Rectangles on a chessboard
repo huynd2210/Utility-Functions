@@ -1,6 +1,9 @@
 //Problem: Given m*n board (chess/checker), count the number of rectangles 
 //Solution: A Rectangle is formed by 2 vertical and horizontal line. => There are C(m,2) * C(n,2) different ways to pick these lines.
 
+
+//Note: For a n*n board, the number of rectangles = (sum(1 -> n))^2 = ((n(n+1))/2)^2.
+//Pattern: 1x1 = 1^2, 2x2 = (1+2)^2, 3x3 = (1+2+3)^2, 4x4 = (1+2+3+4)^2 rectangles
 	public static int factorial (int count){
 		int result = 1;
 		for (int i = 1; i <= count; i++){
