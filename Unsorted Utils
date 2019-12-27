@@ -1,0 +1,5 @@
+    static List filterList(List inputList, Predicate predicate){
+        return (List) inputList.stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
+    }
