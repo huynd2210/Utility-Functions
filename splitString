@@ -1,0 +1,3 @@
+    public ArrayList<String> splitString(String input, String regex){
+        return new ArrayList<>(Arrays.asList(input.split(regex)));
+    }
