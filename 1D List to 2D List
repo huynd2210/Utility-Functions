@@ -1,0 +1,15 @@
+public static List<List<T>> 1dTo2d(List<T> 1dlist, int rowLength){
+  List<List<T>> 2dList = new ArrayList<>();
+  List<T> tmp = new ArrayList<>();
+  
+  for (int i = 0; i < 1dlist.size(); i++){
+            if ((i + 1) % rowLength != 0){
+                tmp.add(1dlist.get(i));
+            }else{
+                tmp.add(1dlist.get(i));
+                1dlist.add(List.copyOf(tmp));
+                tmp.clear();
+            }
+        }
+        return 2dList;
+}
