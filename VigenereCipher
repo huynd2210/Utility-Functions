@@ -1,0 +1,40 @@
+class VigenereCipher(object):
+    def __init__(self, alphabet: str, password: str):
+        self.alphabet = alphabet
+        self.password = password
+        self.table = self.initTable()
+
+    def initTable(self):
+        table = []
+        currentRow = self.alphabet
+        for _ in range(len(self.alphabet)):
+            table.append(currentRow)
+            currentRow = self.shiftString(currentRow)
+        return table
+
+    def shiftString(self, string):
+        tmp = deque(string)
+        tmp.rotate(-1)
+        return ''.join(tmp)
+
+    def encode(self, message: str):
+        cipher = []
+        for i in range(len(message)):
+            if message[i] not in self.alphabet:
+                cipher.append(message[i])
+            else:
+                rowIndex = self.alphabet.index(self.password[i % len(self.password)])
+                colIndex = self.alphabet.index(message[i])
+                cipher.append(self.table[rowIndex][colIndex])
+        return ''.join(cipher)
+
+    def decode(self, message: str):
+        text = []
+        for i in range(len(message)):
+            if message[i] not in self.alphabet:
+                text.append(message[i])
+            else:
+                rowIndex = self.alphabet.index(self.password[i % len(self.password)])
+                colIndex = self.table[rowIndex].index(message[i])
+                text.append(self.alphabet[colIndex])
+        return ''.join(text)
