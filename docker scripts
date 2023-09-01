@@ -1,0 +1,5 @@
+docker run --name data-warehouse -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d postgres
+Docker docker run --name=mysql -p 4406:3306 -e MYSQL_ROOT_PASSWORD=start01 -e MYSQL_DATABASE=KLEINANZEIGEN -d mysql:8.0.22
+
+
+docker run --name datenbank2-p 4321:4321 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres1 -d postgres
